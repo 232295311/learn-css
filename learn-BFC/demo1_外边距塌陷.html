@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>如何清除相邻块级盒子间的margin塌陷</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .first {
+        margin: 100px;
+        background: lightgreen;
+        border: 1px solid;
+        width: 100px;
+        height: 100px;
+      }
+      ul {
+        /* display: inline-block; */
+        /* position: fixed; */
+        /* float: left; */
+        margin: 100px;
+        background: lightblue;
+        /* 注释下一行，会发生父子间margin塌陷 */
+        /* border: 1px solid; */
+        width: 200px;
+      }
+      li {
+        margin: 10px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>如何清除相邻盒子间的margin塌陷</h3>
+    <div class="first"></div>
+    <!-- <div class="second"> -->
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ul>
+    <!-- </div> -->
+  </body>
+</html>
